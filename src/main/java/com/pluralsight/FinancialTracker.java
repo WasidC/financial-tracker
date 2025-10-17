@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
 
+
 /*
  * Capstone skeleton – personal finance tracker.
  * ------------------------------------------------
@@ -238,7 +239,7 @@ public class FinancialTracker {
        ------------------------------------------------------------------ */
     private static void displayLedger() {
         System.out.printf("%-12s %-10s %-20s %-15s %10s%n",
-            "Date", "Time", "Description", "Vendor", "Amount");
+                "Date", "Time", "Description", "Vendor", "Amount");
         for (Transaction t : transactions) {
             System.out.printf("%-12s %-10s %-20s %-15s %10.2f%n",
                     t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
@@ -365,11 +366,15 @@ public class FinancialTracker {
             return LocalDate.parse(s, DATE_FMT);
         } catch (Exception e) {
             System.out.println("Invalid date format.");
-        return null;
+            return null;
+        }
     }
-
-    private static Double parseDouble(String s) {
-        /* TODO – return Double   or null */
-        return null;
+        private static Double parseDouble(String s) {
+            try {
+                return Double.parseDouble(s);
+            } catch (Exception e) {
+                System.out.println("Invalid number.");
+                return null;
+            }
+        }
     }
-}
