@@ -196,6 +196,15 @@ public class FinancialTracker {
         }
     }
 
+    /* Save a single transaction to the CSV file. */
+
+    private static void saveTransactionToFile(Transaction t) {
+        try (FileWriter writer = new FileWriter(FILE_NAME, true)) {
+            writer.write(t.toCSVLine() + "\n");
+        } catch (IOException e) {
+            System.out.println("Error saving transaction: " + e.getMessage());
+        }
+    }
 
     /* ------------------------------------------------------------------
        Ledger menu
