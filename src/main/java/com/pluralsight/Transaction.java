@@ -28,4 +28,8 @@ public class Transaction {
     public String getVendor() { return vendor; }
     public double getAmount() { return amount; }
 
+    // Converts this object into a string line for CSV
+    public String toCSVLine() {
+        return date + "|" + time + "|" + description + "|" + vendor + "|" + amount;
+    }
 }
