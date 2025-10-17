@@ -327,8 +327,34 @@ public class FinancialTracker {
     }
 
     private static void customSearch(Scanner scanner) {
-        // TODO – prompt for any combination of date range, description,
-        //        vendor, and exact amount, then display matches
+        System.out.print("Enter start date (yyyy-MM-dd) or leave blank: ");
+        String startInput = scanner.nextLine();
+        System.out.print("Enter end date (yyyy-MM-dd) or leave blank: ");
+        String endInput = scanner.nextLine();
+        System.out.print("Enter description keyword or leave blank: ");
+        String descInput = scanner.nextLine();
+        System.out.print("Enter vendor or leave blank: ");
+        String vendorInput = scanner.nextLine();
+        System.out.print("Enter exact amount or leave blank: ");
+        String amountInput = scanner.nextLine();
+
+        LocalDate start = startInput.isEmpty() ? null : parseDate(startInput);
+        LocalDate end = endInput.isEmpty() ? null : parseDate(endInput);
+        Double amount = amountInput.isEmpty() ? null : parseDouble(amountInput);
+
+        for (Transaction t : transactions) {
+            boolean match = true;
+            if (start != null && t.getDate().isBefore(start)) match = false;
+            if (end != null && t.getDate().isAfter(end)) match = false;
+            if (!descInput.isEmpty() && !t.getDescription().toLowerCase().contains(descInput.toLowerCase())) match = false;
+            if (!vendorInput.isEmpty() && !t.getVendor().equalsIgnoreCase(vendorInput)) match = false;
+            if (amount != null && t.getAmount() != amount) match = false;
+
+            if (match) {
+                System.out.printf("%-12s %-10s %-20s %-15s %10.2f%n",
+                        t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
+            }
+        }
     }
 
     /* ------------------------------------------------------------------
