@@ -139,6 +139,22 @@ public class FinancialTracker {
                 System.out.println("Amount must be positive!");
                 return;
             }
+
+            // Create a new Transaction object
+            Transaction t = new Transaction(dateTime.toLocalDate(), dateTime.toLocalTime(), description, vendor, amount);
+            transactions.add(t);
+
+            // Append transaction to file
+            saveTransactionToFile(t);
+            System.out.println("Deposit added successfully.");
+
+        } catch (DateTimeParseException e) {
+            System.out.println("Invalid date/time format. Please use yyyy-MM-dd HH:mm:ss");
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid amount. Please enter a number.");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
     /**
