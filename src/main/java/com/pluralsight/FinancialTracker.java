@@ -361,7 +361,10 @@ public class FinancialTracker {
        Utility parsers (you can reuse in many places)
        ------------------------------------------------------------------ */
     private static LocalDate parseDate(String s) {
-        /* TODO – return LocalDate or null */
+        try {
+            return LocalDate.parse(s, DATE_FMT);
+        } catch (Exception e) {
+            System.out.println("Invalid date format.");
         return null;
     }
 
