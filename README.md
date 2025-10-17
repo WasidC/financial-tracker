@@ -3,9 +3,9 @@
 ## Description of the Project
 This Java console application allows users to track all financial transactions for personal or business use. The app reads from and writes to a CSV file named transactions.csv, storing each transaction on a single line in the following format:
 
-date|time|description|vendor|amount
-2023-04-15|10:13:25|Ergonomic Keyboard|Amazon|-89.50
-2023-04-15|11:15:00|Invoice 1001 Paid|Joe|1500.00
+- date|time|description|vendor|amount 
+- 2023-04-15|10:13:25|Ergonomic Keyboard|Amazon|-89.50 
+- 2023-04-15|11:15:00|Invoice 1001 Paid|Joe|1500.00
 
 Users can add deposits, record payments, view a detailed ledger, and run reports or custom searches. The application is designed for anyone who wants to maintain an organized, clear view of their income and expenses without relying on spreadsheets or third-party software.
 
