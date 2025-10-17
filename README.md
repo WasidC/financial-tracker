@@ -19,7 +19,6 @@ Reports menu with predefined date ranges (Month-to-Date, Previous Month, Year-to
 
 Custom search filtering by start/end date, description, vendor, and amount.
 
-The application is designed for anyone who wants to maintain an organized, clear view of their income and expenses without relying on spreadsheets or third-party software.
 
 ## User Stories
 
