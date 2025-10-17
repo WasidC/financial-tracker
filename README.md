@@ -1,8 +1,24 @@
 # Accounting Ledger Application
 
 ## Description of the Project
+This Java console application allows users to track all financial transactions for personal or business use. The app reads from and writes to a CSV file named transactions.csv, storing each transaction on a single line in the following format:
 
-With this application you can track all financial transactions for a business or for personal use.
+date|time|description|vendor|amount
+2023-04-15|10:13:25|Ergonomic Keyboard|Amazon|-89.50
+2023-04-15|11:15:00|Invoice 1001 Paid|Joe|1500.00
+
+Users can add deposits, record payments, view a detailed ledger, and run reports or custom searches. The application is designed for anyone who wants to maintain an organized, clear view of their income and expenses without relying on spreadsheets or third-party software.
+
+Main functionalities include:
+
+Home screen with options to add deposits, record payments, view ledger, or exit.
+
+Ledger screen displaying all transactions, deposits only, or payments only.
+
+Reports menu with predefined date ranges (Month-to-Date, Previous Month, Year-to-Date, Previous Year) and vendor search.
+
+Custom search filtering by start/end date, description, vendor, and amount.
+
 The application is designed for anyone who wants to maintain an organized, clear view of their income and expenses without relying on spreadsheets or third-party software.
 
 ## User Stories
@@ -48,14 +64,19 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
 
-![Application Screenshot](path/to/your/screenshot.png)
+![img.png](img.png)![Application Screenshot](path/to/your/screenshot.png)
 
 ## Future Work
 
 Outline potential future enhancements or functionalities you might consider adding:
 
-- Additional feature to be developed.
-- Improvement of current functionalities.
+- Edit or delete transactions after they are recorded.
+
+- Add CSV backup and restore functionality.
+
+- Include summary reports with totals, averages, or trends.
+
+- Add a graphical user interface (GUI) for a more user-friendly experience.
 
 ## Resources
 
@@ -63,6 +84,7 @@ List resources such as tutorials, articles, or documentation that helped you dur
 
 - [Java Programming Tutorial](https://www.example.com)
 - [Effective Java](https://www.example.com)
+- Pluralsight Java Fundamentals Course Materials
 
 ## Team Members
 
