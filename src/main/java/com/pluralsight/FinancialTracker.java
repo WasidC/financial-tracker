@@ -236,7 +236,14 @@ public class FinancialTracker {
     /* ------------------------------------------------------------------
        Display helpers: show data in neat columns
        ------------------------------------------------------------------ */
-    private static void displayLedger() { /* TODO – print all transactions in column format */ }
+    private static void displayLedger() {
+        System.out.printf("%-12s %-10s %-20s %-15s %10s%n",
+            "Date", "Time", "Description", "Vendor", "Amount");
+        for (Transaction t : transactions) {
+            System.out.printf("%-12s %-10s %-20s %-15s %10.2f%n",
+                    t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
+        }
+    }
 
     private static void displayDeposits() { /* TODO – only amount > 0               */ }
 
