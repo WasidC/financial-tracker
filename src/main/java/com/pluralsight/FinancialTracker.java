@@ -121,7 +121,24 @@ public class FinancialTracker {
      * Store the amount as-is (positive) and append to the file.
      */
     private static void addDeposit(Scanner scanner) {
-        // TODO
+        try {
+            System.out.print("Enter date and time (yyyy-MM-dd HH:mm:ss): ");
+            String dt = scanner.nextLine();
+            LocalDateTime dateTime = LocalDateTime.parse(dt, DATETIME_FMT);
+
+            System.out.print("Enter description: ");
+            String description = scanner.nextLine();
+
+            System.out.print("Enter vendor: ");
+            String vendor = scanner.nextLine();
+
+            System.out.print("Enter deposit amount (positive): ");
+            double amount = Double.parseDouble(scanner.nextLine());
+
+            if (amount <= 0) {
+                System.out.println("Amount must be positive!");
+                return;
+            }
     }
 
     /**
