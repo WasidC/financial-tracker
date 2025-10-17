@@ -6,6 +6,11 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.*;
 
 /*
  * Capstone skeleton – personal finance tracker.
@@ -71,9 +76,38 @@ public class FinancialTracker {
      * • Each line looks like: date|time|description|vendor|amount
      */
     public static void loadTransactions(String fileName) {
-        // TODO: create file if it does not exist, then read each line,
-        //       parse the five fields, build a Transaction object,
-        //       and add it to the transactions list.
+        try {
+            File file = new File(fileName);
+
+            // If file doesn’t exist, create an empty one so writing later doesn’t fail
+            if (!file.exists()) {
+                file.createNewFile();
+                return;
+            }
+
+            // Read each line and split fields by "|"
+            Scanner fileScanner = new Scanner(file);
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                String[] parts = line.split("\\|");
+
+                // Each transaction has 5 parts
+                if (parts.length == 5) {
+                    LocalDate date = LocalDate.parse(parts[0], DATE_FMT);
+                    LocalTime time = LocalTime.parse(parts[1], TIME_FMT);
+                    String description = parts[2];
+                    String vendor = parts[3];
+                    double amount = Double.parseDouble(parts[4]);
+
+                    // Create Transaction object and add it to the list
+                    transactions.add(new Transaction(date, time, description, vendor, amount));
+                }
+            }
+            fileScanner.close();
+
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
     }
 
     /* ------------------------------------------------------------------
