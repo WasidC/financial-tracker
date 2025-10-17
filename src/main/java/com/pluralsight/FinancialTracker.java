@@ -254,7 +254,14 @@ public class FinancialTracker {
         }
     }
 
-    private static void displayPayments() { /* TODO – only amount < 0               */ }
+    private static void displayPayments() {
+        for (Transaction t : transactions) {
+        if (t.getAmount() < 0) {
+            System.out.printf("%-12s %-10s %-20s %-15s %10.2f%n",
+                    t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
+        }
+    }
+    }
 
     /* ------------------------------------------------------------------
        Reports menu
