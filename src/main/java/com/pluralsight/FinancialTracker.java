@@ -78,7 +78,7 @@ public class FinancialTracker {
 
         while (running) {
             // main menu loop
-            System.out.println("Welcome to TransactionApp");
+            System.out.println("Welcome to LedgerApp");
             System.out.println("Choose an option:");
             System.out.println("D) Add Deposit");
             System.out.println("P) Make Payment (Debit)");
