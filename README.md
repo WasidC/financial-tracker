@@ -1,15 +1,23 @@
-# Project Title
+# Accounting Ledger Application
 
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+With this application you can track all financial transactions for a business or for personal use.
+The application is designed for anyone who wants to maintain an organized, clear view of their income and expenses without relying on spreadsheets or third-party software.
 
 ## User Stories
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
+- As a user, I want to input my deposits and payments, so that the application records my transactions accurately.
 
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As a user, I want immediate feedback if I enter invalid data, so that I can correct mistakes before saving.
+
+- As a user, I want to view all my transactions in a ledger format, so that I can understand my financial history.
+
+- As a user, I want to filter transactions by date, vendor, or amount, so that I can quickly find specific entries.
+
+- As a user, I want to run pre-defined reports, so that I can analyze my finances over different time periods.
+
+- As a user, I want to perform custom searches, so that I can find transactions matching multiple criteria.
 
 ## Setup
 
@@ -32,8 +40,9 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Technologies Used
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+- Java 17: Programming language used for core application logic.
+- IntelliJ IDEA: IDE used for development, debugging, and running the application.
+- CSV File Storage: Used transactions.csv to persist all transactions.
 
 ## Demo
 
@@ -57,12 +66,8 @@ List resources such as tutorials, articles, or documentation that helped you dur
 
 ## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+Wasid Chowdhury 
 
 ## Thanks
 
-Express gratitude towards those who provided help, guidance, or resources:
-
-- Thank you to [Mentor's Name] for continuous support and guidance.
-- A special thanks to all teammates for their dedication and teamwork.
+- Thank you to Raymond, potato sensei for continuous support and guidance.
