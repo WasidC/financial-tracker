@@ -1,4 +1,17 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+/*
+ Each transaction includes a date, time, description, vendor, and amount.
+ */
 public class Transaction {
+    private LocalDate date;
+    private LocalTime time;
+    private String description;
+    private String vendor;
+    private double amount;
+
+    }
 }
