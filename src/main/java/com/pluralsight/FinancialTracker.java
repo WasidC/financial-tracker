@@ -181,7 +181,20 @@ public class FinancialTracker {
                 System.out.println("Amount must be positive!");
                 return;
             }
+            // Store as negative for payment
+            amount = -amount;
+
+            Transaction t = new Transaction(dateTime.toLocalDate(), dateTime.toLocalTime(), description, vendor, amount);
+            transactions.add(t);
+            saveTransactionToFile(t);
+            System.out.println("Payment recorded successfully.");
+
+        } catch (DateTimeParseException e) {
+            System.out.println("Invalid date/time format. Please use yyyy-MM-dd HH:mm:ss");
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid amount. Please enter a number.");
         }
+    }
 
 
     /* ------------------------------------------------------------------
